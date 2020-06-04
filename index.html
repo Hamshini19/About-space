@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Learn about Space</title>
+    <style>
+    body{
+    background-color:black;
+    
+        
+    }
+    #sun{
+    border-radius:50%;    
+    width:70px;    
+    height:70px;
+    background-color:yellow;
+    position:relative;    
+    left:500px;
+    top:150px;    
+    }    
+    #mercury{
+    border-radius:50%;    
+    width:30px;    
+    height:30px;
+    background-color:rgb(255, 188, 71);
+    position:relative;    
+    left:390px;
+    top:150px;    
+    }     
+    #venus{
+    border-radius:50%;    
+    width:50px;    
+    height:50px;
+    background-color:rgb(235, 154, 97);
+    position:relative;    
+    left:300px;
+    top:150px;    
+    }     
+    #earth{
+    border-radius:50%;    
+    width:50px;    
+    height:50px;
+    background-color:lightblue;
+    position:relative;    
+    left:190px;
+    top:150px;    
+    }     
+    #mars{
+    border-radius:50%;    
+    width:53px;    
+    height:53px;
+    background-color:rgb(255, 76, 76);
+    position:relative;    
+    left:70px;
+    top:150px;    
+    }     
+    #jupiter{
+    border-radius:50%;    
+    width:70px;    
+    height:70px;
+    background-color:rgb(255, 123, 0);
+    position:relative;    
+    left:-60px;
+    top:150px;    
+    }     
+    #saturn{
+    border-radius:50%;    
+    width:70px;    
+    height:70px;
+    background-color:rgb(251, 255, 133);
+    position:relative;    
+    left:-220px;
+    top:170px;    
+    }  
+    #saturn-rings{
+    position:relative;    
+    left:-305px;
+    top:140px;         
+    width:90px;
+       
+    }     
+    #uranus{
+    border-radius:50%;    
+    width:70px;    
+    height:70px;
+    background-color:rgb(147, 220, 230);
+    position:relative;    
+    left:45px;
+    top:70px;    
+    z-index:-1;     
+    }        
+    #neptune{
+    border-radius:50%;    
+    width:60px;    
+    height:60px;
+    background-color:rgb(54, 194, 245);
+    position:relative;    
+    left:-90px;
+    top:70px;    
+    z-index:-2;
+        
+    }        
+    #info {
+    color:black;    
+    overflow:auto;
+    background-color:rgb(248, 252, 0);    
+    position:relative;
+      
+    
+        
+    }    
+    #select {
+    position:relative;    
+    left:98px;
+    bottom:130px;    
+    }    
+    #GiveInformation {
+    border-radius:100px;
+    background:lightgreen;
+    position:relative;    
+    left:279px;
+    bottom:100px;    
+    }    
+    
+    </style>    
+    </head>
+    
+    <body>
+
+    <p id = "info"></p>
+    <button id="sun">The Sun</button>    
+    <button id="mercury"></button>     
+    <button id="venus">Venus</button> 
+    <button id="earth">Earth</button>     
+    <button id="mars">Mars</button>     
+    <button id="jupiter">Jupiter</button>     
+    <button id="saturn"></button>
+    <button id="saturn-rings">Saturn</button>
+    <button id="uranus">Uranus</button> 
+    <button id="neptune">Neptune</button> 
+    <button id = "GiveInformation" onclick="getInfo()">Give  me some information!</button>
+    
+    
+    <label><select id = "select">
+    <option value = "The solar system">The Solar System</option>
+    <option value = "Sun">The Sun</option>
+    <option value = "Mercury">Mercury</option>
+    <option value = "Venus">Venus</option>
+    <option value = "Earth">Earth</option>
+    <option value = "Moon">Moons</option>
+    <option value = "Mars">Mars</option>
+    <option value = "Jupiter">Jupiter</option>
+    <option value = "Saturn">Saturn</option>
+    <option value = "Uranus">Uranus</option>
+    <option value = "Neptune">Neptune</option>
+    <option value = "Comets">Comets</option>
+    <option value = "Meteor">Meteors</option>    
+    <option value = "Meteoroid">Meteoroids</option>   
+    <option value = "Meteorite">Meteorites</option>    
+    <option value = "Dwarf planet">Dwarf planets</option>
+    <option value = "Asteroid">Asteroid</option>
+    <option value = "Minor planet">Minor planet or planetoid
+    </option>    
+    <option value = "Blackholes">Blackholes</option>
+    <option value = "Stars">Stars</option>    
+    <option value = "Brown dwarf">Brown dwarf</option>
+    <option value = "Star Cluster">Star Cluster</option>
+    <option value = "Binary star">Binary star</option>
+    <option value = "Galaxies">Galaxies</option>
+    <option value = "Quasar">Quasar</option>    
+    <option value = "Blazar">Blazar</option>
+    <option value = "Pulsar">Pulsar</option>
+    <option value = "Magnetar">Magnetar</option>    
+    <option value = "Exoplanet">Exoplanet</option>
+    <option value = "Protostar">Protostar</option>    
+    <option value = "Supercluster">Supercluster</option>
+    <option value = "Void">Void</option>    
+    <option value = "Open cluster">Open cluster</option>
+    <option value = "Nebula">Nebula</option>    
+    <option value = "Globular cluster">Globular cluster</option>
+    <option value = "Variable star">Variable star</option>
+    <option value = "Galactic group">Galactic group</option>
+    <option value = "White dwarf">White dwarf</option>    
+    <option value = "Red giant">Red giant</option>
+    <option value = "Neutron star">Neutron star</option>    
+    <option value = "Galaxy filament">Galaxy filament</option>
+        
+    </select>
+    </label>
+    
+    <script>
+    var GiveInformation = getElementById("GiveInformation");
+    function getInfo(){
+    var info = document.getElementById("info");
+    var select = document.getElementById("select").value;
+    if(select === "Galaxy filament"){
+        info.innerHTML = "In physical cosmology, galaxy filaments are the largest known structures in the universe. They are massive, thread-like formations, with a typical length of 50 to 80 megaparsecs h⁻¹ that form the boundaries between large voids in the universe. Filaments consist of gravitationally bound galaxies."
+    }
+    if(select === "Neutron star"){
+        info.innerHTML = "A neutron star is the collapsed core of a giant star, which before collapse had a total mass of between 10 and 29 solar masses. Neutron stars are the smallest and densest stars, excluding black holes and hypothetical white holes, quark stars, and strange stars."
+    }
+    if(select === "Red giant"){
+        info.innerHTML = "A red giant is a luminous giant star of low or intermediate mass in a late phase of stellar evolution. The outer atmosphere is inflated and tenuous, making the radius large and the surface temperature around 5,000 K or lower."
+    }
+    if(select === "White dwarf"){
+        info.innerHTML = "A white dwarf, also called a degenerate dwarf, is a stellar core remnant composed mostly of electron-degenerate matter. A white dwarf is very dense: its mass is comparable to that of the Sun, while its volume is comparable to that of Earth. "
+    }
+    if(select === "Variable star"){
+        info.textContent = "A variable star is a star whose brightness as seen from Earth fluctuates."
+    }
+    if(select === "Brown dwarf"){
+        info.innerHTML = "A brown dwarf is a type of substellar object that has a mass between those of the heaviest gas giant planets and the least massive stars, i.e., approximately 13 to 75–80 times that of Jupiter, or approximately 2.5×10²⁸ kg to about 1.5×10²⁹ kg"
+    }
+    if(select === "Open cluster"){
+        info.innerHTML = "An open cluster is a group of up to a few thousand stars that were formed from the same giant molecular cloud and have roughly the same age. More than 1,100 open clusters have been discovered within the Milky Way Galaxy, and many more are thought to exist."
+    }
+    if(select === "Galactic group"){
+        info.innerHTML = "A galaxy group or group of galaxies is an aggregation of galaxies comprising about 50 or fewer gravitationally bound members, each at least as luminous as the Milky Way; collections of galaxies larger than groups that are first-order clustering are called galaxy clusters."
+    }
+    if(select === "Binary star"){
+        info.innerHTML = "A binary star is a star system consisting of two stars orbiting around their common barycenter. Systems of two or more stars are called multiple star systems. These systems, especially when more distant, often appear to the unaided eye as a single point of light, and are then revealed as multiple by other means."
+    }
+    if(select === "Globular cluster"){
+        info.innerHTML = "A globular cluster is a spherical collection of stars that orbits a galactic core. Globular clusters are very tightly bound by gravity, which gives them their spherical shapes, and relatively high stellar densities toward their centers"
+    }
+    if(select === "Nebula"){
+        info.innerHTML = "A nebula is an interstellar cloud of dust, hydrogen, helium and other ionized gases. Originally, the term was used to describe any diffused astronomical object, including galaxies beyond the Milky Way."
+    
+    }
+    if(select === "Star Cluster"){
+        info.innerHTML = "Star clusters are groups of stars which are gravitationally bound. Two distinct types of star cluster can be distinguished: globular clusters are tight groups of hundreds of thousands of very old stars, while open clusters generally contain less than a few hundred members, and are often very young"
+    }
+    
+    if(select === "Pulsar"){
+        info.innerHTML = "A pulsar is a highly magnetized rotating neutron star that emits beams of electromagnetic radiation out of its magnetic poles. This radiation can be observed only when a beam of emission is pointing toward Earth, and is responsible for the pulsed appearance of emission."
+    }
+    if(select === "The solar system"){
+        info.innerHTML = "The Solar System is the gravitationally          bound system of the Sun and the objects that orbit it,            either directly or indirectly. Of the objects that orbit          the Sun directly, the largest are the eight planets, with          the remainder being smaller objects, the dwarf planets            and small Solar System bodies."
+    }
+    if(select === "Sun"){
+    info.innerHTML = "The sun lies at the heart of the solar system, where it is by far the largest object. It holds 99.8 percent of the solar system's mass and is roughly 109 times the diameter of the Earth - about one million Earths could fit inside the sun. ... The sun is one of more than 100 billion stars in the Milky Way."
+    }
+    if(select === "Mercury"){
+        info.innerHTML = "Along with Venus, Earth, and Mars, Mercury is one of the rocky planets. It has a solid surface that is covered with craters. ... Because it's the closest planet to the sun, it doesn't take very long to go all the way around. It completes one revolution around the sun in just 88 Earth days." 
+    } 
+    if(select === "Venus"){
+        info.innerHTML ="Venus is the second planet from the Sun. It is named after the Roman goddess of love and beauty. As the second-brightest natural object in the night sky after the Moon, Venus can cast shadows and can be, on rare occasion, visible to the naked eye in broad daylight."
+    }   
+    if(select === "Earth"){    
+       info.innerHTML = "Earth, our home planet, is a world unlike any other. The third planet from the sun, Earth is the only place in the known universe confirmed to host life. With a radius of 3,959 miles, Earth is the fifth largest planet in our solar system, and it's the only one known for sure to have liquid water on its surface" 
+    } 
+    if(select === "Mars"){    
+        info.innerHTML = "Mars is sometimes called the Red Planet.  Like Earth, Mars has seasons, polar ice caps, volcanoes, canyons, and weather. It has a very thin atmosphere made of carbon dioxide, nitrogen, and argon. There are signs of ancient floods on Mars, but now water mostly exists in icy dirt and thin clouds"    
+    }   
+    if(select === "Jupiter"){    
+        info.innerHTML = "Jupiter is the biggest planet in our solar system. ... Jupiter is a gas giant and doesn't have a solid surface, but it may have a solid inner core about the size of Earth. Jupiter also has rings, but they're too faint to see very well."
+    }    
+    if(select === "Saturn"){    
+        info.innerHTML = "Saturn is a gas giant made up mostly of hydrogen and helium. Saturn's volume is greater than 760 Earths, and it is the second most massive planet in the solar system, about 95 times Earth's mass. The Ringed Planet is the least dense of all the planets, and is the only one less dense than water."
+    }    
+    if(select === "Uranus"){    
+        info.innerHTML = "Uranus is an ice giant (instead of a gas giant). It is mostly made of flowing icy materials above a solid core. Uranus has a thick atmosphere made of methane, hydrogen, and helium. Uranus is the only planet that spins on its side"  
+    }    
+    if(select === "Neptune"){    
+        info.innerHTML = "Neptune is dark, cold, and very windy. It's the last of the planets in our solar system. It's more than 30 times as far from the sun as Earth is. ... It's made of a thick fog of water, ammonia, and methane over an Earth-sized solid center."
+    }    
+   if(select === "Comets"){
+        info.innerHTML = "A comet is an icy, small Solar System body that, when passing close to the Sun, warms and begins to release gases, a process called outgassing. This produces a visible atmosphere or coma, and sometimes also a tail."
+    
+   }   
+   if(select === "Meteor"){
+        info.innerHTML = "A meteor or shooting star is the visible streak of light from a heated and glowing object falling through the Earth's atmosphere."
+   }   
+   
+    if(select === "Meteoroid"){   
+        info.innerHTML = "A meteoroid is a small rocky or metallic body travelling through outer space."    
+    }    
+    if(select === "Meteorite"){
+        info.innerHTML = "A meteorite is a solid piece of debris from such a body which survives its passage through the Earth's atmosphere, and falls to the Earth's surface"
+    }    
+    if(select === "Dwarf planet"){
+        info.innerHTML = "A dwarf planet is a planetary-mass object that does not dominate its region of space and is not a satellite."
+    }    
+    if(select === "Asteroid"){
+        info.innerHTML = "Asteroids are minor planets, especially of the inner Solar System. Larger asteroids have also been called planetoids."
+    }    
+    if(select === "Minor planet"){
+        info.innerHTML = "A minor planet is an astronomical object in direct orbit around the Sun that is neither a planet nor exclusively classified as a comet."
+    }    
+    if(select === "Moon"){
+        info.innerHTML = "Moons — also known as natural satellites — orbit planets and asteroids. There are more than 200 moons in our solar system. Most orbit the giant planets — with Saturn and Jupiter leading moon counts — but even smaller worlds like Pluto can have five moons in orbit. Moons come in many shapes, sizes and types."
+        
+    }    
+    if(select === "Blackholes"){
+        info.innerHTML = 'A black hole is a region of spacetime where gravity is so strong that nothing—no particles or even electromagnetic radiation such as light—can escape from it. The theory of general relativity predicts that a sufficiently compact mass can deform spacetime to form a black hole.'
+    }    
+    if(select === "Stars"){
+        info.innerHTML = "Stars are huge celestial bodies made mostly of hydrogen and helium that produce light and heat from the churning nuclear forges inside their cores. ... It's impossible to know how many stars exist, but astronomers estimate that in our Milky Way galaxy alone, there are about 300 billion."
+    }    
+    if(select === "Galaxies"){
+        info.textContent = "A galaxy is a gravitationally bound system of stars, stellar remnants, interstellar gas, dust, and dark matter. The word galaxy is derived from the Greek galaxias, literally 'milky', a reference to the Milky Way."
+    }    
+    if(select === "Quasar"){
+        info.textContent = "A quasar is an extremely luminous active galactic nucleus, in which a supermassive black hole with mass ranging from millions to billions of times the mass of the Sun is surrounded by a gaseous accretion disk." 
+    }    
+    if(select === "Blazar"){
+        info.innerHTML = "A blazar is an active galactic nucleus with a relativistic jet directed very nearly towards an observer. Relativistic beaming of electromagnetic radiation from the jet makes blazars appear much brighter than they would be if the jet were pointed in a direction away from Earth"
+    }    
+    if(select === "Magnetar"){
+        info.innerHTML = "A magnetar is a type of neutron star believed to have an extremely powerful magnetic field. The magnetic field decay powers the emission of high-energy electromagnetic radiation, particularly X-rays and gamma rays."
+    }    
+    if(select === "Exoplanet"){
+        info.innerHTML = "An exoplanet or extrasolar planet is a planet outside the Solar System. The first possible evidence of an exoplanet was noted in 1917, but was not recognized as such. The first confirmation of detection occurred in 1992. This was followed by the confirmation of a different planet, originally detected in 1988."
+    }    
+    if(select === "Protostar"){
+        info.innerHTML = "A protostar is a very young star that is still gathering mass from its parent molecular cloud. The protostellar phase is the earliest one in the process of stellar evolution. For a low mass star, it lasts about 500,000 years."
+    }    
+    if(select === "Supercluster"){
+        info.innerHTML = "A supercluster is a large group of smaller galaxy clusters or galaxy groups; it is among the largest known structures of the universe. The Milky Way is part of the Local Group galaxy group, which in turn is part of the Virgo Supercluster, which is part of the Laniakea Supercluster. "
+    }    
+    if(select === "Void"){
+        info.innerHTML = "Cosmic voids are vast spaces between filaments, which contain very few or no galaxies. Voids typically have a diameter of 10 to 100 megaparsecs; particularly large voids, defined by the absence of rich superclusters, are sometimes called supervoids."
+    }    
+    if(select === "Star cluster")
+        info.innerHTML = "Star clusters are very large groups of stars."   
+    }
+    GiveInformation.addEventListener("click", getInfo);    
+    </script>    
+    </body>
+</html>
