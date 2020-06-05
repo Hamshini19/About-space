@@ -112,7 +112,7 @@
     #select {
     position:relative;    
     right:400px;
-    top:500px;
+    top:60px;
     }    
     #GiveInformation {
     border-radius:100px;
@@ -120,19 +120,20 @@
     position:relative;    
     right:220px;
     top:30px;
-    }    
-    h4 {    
-    color:pink;
-    position:relative;
-    top:500px;    
-    }	    
+    }   
+	.myclass{
+	    position:relative;    
+		color: pink;
+		font-size: 15px;
+		top:300px;
+	}	
     </style>    
     </head>
     
     <body>
-     
+     <div id='test' class='myclass'><marquee>Made by Hamshini</marquee></div>
     <p id = "info"></p>
-    
+
     <button id="sun">The Sun</button>    
     <button id="mercury"></button>     
     <button id="venus">Venus</button> 
@@ -192,7 +193,7 @@
         
     </select>
     </label>
-	    <h4>Made by Hamshini</h4>
+	    
     <script>
     var GiveInformation = getElementById("GiveInformation");
     function getInfo(){
