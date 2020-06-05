@@ -9,7 +9,7 @@
     
         
     }
-    
+     
     #sun{
     border-radius:50%;    
     width:70px;    
@@ -101,8 +101,8 @@
         
     }        
     #info {
-    color:red;    
-    
+    color:black;    
+     
     background-color:rgb(248, 252, 0);    
     position:relative;
     bottom:0px;  
@@ -112,7 +112,7 @@
     #select {
     position:relative;    
     
-    bottom:30px;    
+        
     right:400px;
 	}    
     #GiveInformation {
@@ -120,14 +120,17 @@
     background:lightgreen;
     position:relative;    
     right:220px;
-    bottom:0px;    
-    }    
-
+    top:30px;
+	}    
+     h5 {
+	 color:pink;
+	 
+	 }
 	</style>    
     </head>
     
     <body>
-
+     
     <p id = "info"></p>
     
 	<button id="sun">The Sun</button>    
@@ -189,13 +192,13 @@
         
     </select>
     </label>
-    
+    <h5>Made by Hamshini</h5>
     <script>
     var GiveInformation = getElementById("GiveInformation");
     function getInfo(){
     var info = document.getElementById("info");
     var select = document.getElementById("select").value;
-    if(select === "Galaxy filament"){
+	if(select === "Galaxy filament"){
         info.innerHTML = "In physical cosmology, galaxy filaments are the largest known structures in the universe. They are massive, thread-like formations, with a typical length of 50 to 80 megaparsecs h⁻¹ that form the boundaries between large voids in the universe. Filaments consist of gravitationally bound galaxies."
     }
     if(select === "Neutron star"){
@@ -330,6 +333,7 @@
     </script>    
     </body>
 </html>
+
 
 
 
