@@ -1,2 +1,2 @@
 # Hamshini19.github.io
-Instructions : Select the topic you want and click on it. Then click "Give information" to get the information.
+You can read all of it or you can jump to topics.
